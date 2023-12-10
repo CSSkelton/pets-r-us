@@ -1,0 +1,91 @@
+<!-- 
+    Title: training.ejs
+    Author: Cody Skelton
+    Date: 12.10.2023
+    Description: Training service details for Pets-R-Us project website
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="css/site.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        
+    </head>
+    <body class="dark-theme">
+        <%- include('partials/header') %>
+
+        <div class="img-container" id="training-img">
+            <img src="img/training-dog-sam.jpg">
+        </div>
+        
+        <div class="container card flex-container" id="training-pricing">
+            <h1 class="card-title">Training</h1>
+            <div class="card-content" id="training-packages">
+                <div class="card container" id="training-package-1">
+                    <h3 class="card-title">Tier 1</h3>
+                    <div class="card-content">
+                        <p>Puppy Life Skills: $65</p>
+                        <p>Puppy Basics: $50</p>
+                        <p>Puppy Focus and Self-Control</p>
+                    </div>
+                </div>
+
+                <div class="card container" id="training-package-2">
+                    <h3 class="card-title">Tier 2</h3>
+                    <div class="card-content">
+                        <p>Adolescence 101: $75</p>
+                        <p>Adolescence Leash Walking: $52</p>
+                        <p>Adolescence Manners: $50</p>
+                    </div>
+                </div>
+
+                <div class="card container" id="training-package-3">
+                    <h3 class="card-title">Tier 3</h3>
+                    <div class="card-content">
+                        <p>Adult 101: $75</p>
+                        <p>Adult Impulse Control: $35</p>
+                        <p>Adult Manners: $80</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container card" id="training-trainer-intro">
+            <h2 class="card-title">Meet the Trainer</h2>
+            <img src="img/training-dog-trainer-blue.jpg">
+            <div class="card-content">
+                <h3>Alexis</h3>
+                <p>
+                    Alexis has been with us for 3 years. She came from a farm where she would train horses competitively. Raising those free spirits has given her the experience to keep up with even the most energetic puppies. 
+                </p>
+            </div>
+            <img src="img/training-dog-trainer-rachel.jpg">
+            <div class="card-content">
+                <h3>Marcus</h3>
+                <p>
+                    Marcus comes from a family of professional dog trainers, and has received several awards in shows. His consistency is unmatched, able to train every dog that comes to his lessons.
+                </p>
+            </div>
+        </div>
+
+        <div class="container card" id="training-info">
+            <h2 class="card-title">Additional Information: What to Expect</h2>
+            <div class="card-content">
+                <p>
+                    Our team has over 50 years of combined experience, with some of the best results to show. We can help almost any behavioral issue, so feel free to reach out if you're not sure which training is best for your furry friend. We start out with a one-on-one session to get a feel for your pet's areas they need improvement, and formulate a dedicated training plan for them. 
+                </p>
+                <p>
+                    We prefer to use methods that you can easily replicate as the owner, allowing for a seamless transition from class to the home. This helps improve the bond between you and your pet, strengthening their trust in you and increasing their willingness to listen to your commands. 
+                </p>
+                <p>
+                    We typically see improvements quickly, with most changes occurring within the first 6 weeks. However, realize that dogs from rescue centers or multiple homes may take a little longer than others. 
+                </p>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

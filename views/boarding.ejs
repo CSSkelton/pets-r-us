@@ -1,0 +1,92 @@
+<!-- 
+    Title: template.ejs
+    Author: Cody Skelton
+    Date: 12.10.2023
+    Description: Boarding service details for Pets-R-Us project website
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="css/site.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        
+    </head>
+    <body class="dark-theme">
+        <%- include('partials/header') %>
+
+        <img src="img/boarding-dog-simona.jpg" alt="sunglasses dog">
+
+        <div class="container card" id="boarding-pricing">
+            <h1 class="card-title">Boarding</h1>
+            <div class="card-content">
+                <p>Overnight Pet Boarding Services</p>
+                <p>
+                    <b>Short Stays (up to 5 nights):</b><br>
+                    Single pet: $40/night<br>
+                    Two pets: $65/night<br>
+                    Three pets: $90/night
+                </p>
+                <p>
+                    <b>Extended Stay (5+ nights):</b><br>
+                    Single pet: $35/night<br>
+                    Two pets: $60/night<br>
+                    Three pets: $75/night
+                </p>
+                <br>
+                <p>10% first responder and military discount. (ID required)</p>
+            </div>
+        </div>
+
+        <div class="container card" id="vaccinations">
+            <h1 class="card-title">Required Vaccinations</h1>
+            <div class="card-content">
+                <h3>Dogs</h3>
+                <p>Rabies (1 or 3 Year)</p>
+                <p>DHHP (1 or 3 Year)</p>
+                <p>Bordetella (6 Months)</p>
+                <h3>Cats</h3>
+                <p>Rabies (1 or 3 Year)</p>
+                <p>FVRCP (Feline Viral Rhinotracheitis, Calicivirus & Panleukopenia) (1 or 3 Year)</p>
+            </div>
+        </div>
+
+        <div class="container card" id="boarding-info">
+            <h1 class="card-title">Additional Information</h1>
+            <div class="card-content">
+                <div id="boarding-daycare">
+                    <h2>Free Daycare Available</h2>
+                    <p>You can rest assured that your pet won't be locked up all day. We offer FREE daycare services to overnight boarding clients, allowing your pet to play with others throughout the day.</p>
+                    <p>
+                        <b>Daycare Benefits</b><br>
+                        Safe Environment<br>
+                        Younger dogs can socialize<br>
+                        Helps with separation anxiety<br>
+                        Companionship
+                    </p>
+                </div>
+                <div id="boarding-times">
+                    <h2>Overnight Boarding Drop-off/Pick Up Windows</h2>
+                    <p>
+                        <b>Monday-Friday:</b> 6:30-9:00 AM & 3:30-6:00 PM<br>
+                        <b>Saturday:</b> 9:00-11:00 AM & 1:00-3:00 PM 
+                    </p>
+                    <p>If picking your pet up before we open, we'll waive boarding fees for the final day!</p>
+                </div>
+                <hr>
+                <div id="boarding-description">
+                    <p>
+                        Our faculty maintains a strict routine, making sure your pet is given food and medicine consistently. They'll have constant access to water and an outdoor pen, so no worries about accidents! We keep one staff on site overnight for any emergencies. Our facility is also climate controlled, so your pet can remain comfortable and relaxed. Also, we have video feed available, so you can check in yourself throughout the night. 
+                    </p>
+                    <p>
+                        We treat every pet as if they're our own, upholding the highest quality of care possible. You can specify care for your pet, and we guarantee to follow your routine as closely as possible. We offer flexible scheduling for your pet to receive minor medical care while they are here. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

@@ -25,6 +25,18 @@ app.get('/grooming', (req, res) => {
     });
 })
 
+app.get('/boarding', (req, res) => {
+    res.render('boarding', {
+        title: 'Pets-R-Us Boarding Services'
+    });
+})
+
+app.get('/training', (req, res) => {
+    res.render('training', {
+        title: 'Pets-R-Us Training Services'
+    });
+})
+
 app.listen(PORT, () => {
     console.info(`Listening on port ${PORT}`)
 })

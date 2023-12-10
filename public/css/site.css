@@ -109,6 +109,18 @@ li {
     opacity: 90%;
 }
 
+#training-packages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+#training-packages .container {
+    margin: 0;
+    padding: 20px;
+}
+
 #grooming-prices {
     width: 50%;
     margin: 50px auto;
@@ -116,6 +128,14 @@ li {
 
 #grooming-info .card-content {
     margin: auto 100px;
+}
+
+#boarding-daycare p, #boarding-info p {
+    margin: 15px 100px;
+}
+
+#training-trainer-intro {
+    text-align: center;
 }
 
 /* Form Elements */
@@ -163,8 +183,16 @@ li {
 }
 
 /* Images */
-img {
+.header img {
     max-width: 100px;
+}
+
+img {
+    max-width: 100%;
+}
+
+#training-trainer-intro img {
+    max-width: 50%;
 }
 
 /* Header Elements */
