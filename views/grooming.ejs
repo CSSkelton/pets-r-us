@@ -1,0 +1,41 @@
+<!-- 
+    Title: grooming.ejs
+    Author: Cody Skelton
+    Date: 12.10.2023
+    Description: Grooming service page for Pets-R-Us project.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="css/site.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        
+    </head>
+    <body class="dark-theme">
+        <%- include('partials/header') %>
+
+        <div class="container card" id="grooming-info">
+            <h1 class="card-title">Grooming</h1>
+            <div class="card-content">
+                <p>Our facilities include state of the art grooming stations. That way whenever Fido gets done playing with his buddies while boarding or working up a sweat during training, he can come home just as clean as when he came. Our trained groomers are board certified, so you can rest easy while your pet is being pampered.</p>
+
+                <p>Baths are a thing of the past. We have walk-in showers, so your pet can hop right in, hook up, and be done in a jiffy. We have the popular shampoos and colognes available, complementary of service. All of our showers also come equipped with a drying station, so your pooch doesn't get in the car still wet.</p>
+            </div>
+        </div>
+
+        <div class="container card" id="grooming-prices">
+            <h1 class="card-title">Pricing</h1>
+            <div class="card-content">
+                    <p>Spa Packages: $25-$65</p>
+                    <p>Nail Trim: $10</p>
+                    <p>Haircut: $50-$110</p>
+                    <p>Dental Cleaning: $10</p>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

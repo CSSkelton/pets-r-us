@@ -1,0 +1,25 @@
+<!-- 
+    Title: template.ejs
+    Author: Cody Skelton
+    Date: 12.10.2023
+    Description: This template includes the basic HTML for a new page. 
+        Not to be included in navigation.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="css/site.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        
+    </head>
+    <body class="dark-theme">
+        <%- include('partials/header') %>
+
+        <!-- Main content goes here -->
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

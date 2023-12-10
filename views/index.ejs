@@ -7,11 +7,78 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
         
     </head>
-    <body>
+    <body class="dark-theme" style="background-image: url(img/forest-dog-johann.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
         <%- include('partials/header') %>
 
-        <section class="container">
-            <p>Obligatory paragraph to fill in here</p>
+        <section class="container" id="locations">
+            <div class="card">
+                <h1 class="card-title">Store Locations</h1>
+                <div class="card-content">
+                    <p>We offer 2 locations in Central Kentucky, ready to welcome you and your pets!</p>
+                    <h2>Elizabethtown</h2>
+                    <p>1234 N. Dixie Hwy; Elizabethtown, KY 42701</p>
+                    <h2>Bowling Green</h2>
+                    <p>4343 Main St; Bowling Green, KY 42101</p>
+                </div>
+            </div>            
+        </section>
+
+        <section class="container" id="hours">
+            <div class="card">
+                <h1 class="card-title">Location Hours</h1>
+                <div class="card-content">
+                    <p>MON: 7:00 AM - 5:00 PM</p>
+                    <p>TUES: 7:00 AM - 5:00 PM</p>
+                    <p>WED: 7:00 AM - 5:00 PM</p>
+                    <p>THURS: 7:00 AM - 5:00 PM</p>
+                    <p>FRI: 7:00 AM - 5:00 PM</p>
+                    <p>SAT: 10:00 AM - 3:00 PM</p>
+                    <p>SUN: CLOSED</p>
+
+                    <span class="context">* Hours are local time</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="top-dog">
+            <div class="card">
+                <h1 class="card-title">Dog of the Week</h1>
+                <div class="card-content">
+                    <p><b>Name:</b> Darius</p>
+                    <p><b>Age:</b> 14 months</p>
+                    <p><b>Favorite Activity:</b> Rolling in mud</p>
+                    <p><b>Friends:</b> Randall, Huston</p>
+                    <p><b>Best quality:</b> The proper gentleman energy</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="testimonials">
+            <div class="card">
+                <h1 class="card-title">Customer Testimonials</h1>
+                <div class="card-content">
+                    <p>We had the best experience at the grooming station! Will definitely come back soon.</p>
+                    <span>- Jane Doe</span>
+                    <p>Mandy does such a great job with the training!</p>
+                    <span>- John Doe</span>
+                    <p>The best discounts around. Plus, great customer service!</p>
+                    <span>-Joe Dirt</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="contact">
+            <div class="card">
+                <h1 class="card-title">Contact Us</h1>
+                <div class="card-content">
+                    <p>Sign up for our newsletter! Keep up to date with all of our expanding services and products.</p>
+                    <form id="contact-form" class="form">
+                        <input type="text" id="email" name="email" aria-required="true" placeholder="Email" class="form-field input">
+
+                        <button class="btn btn-primary">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <%- include('partials/footer') %>
