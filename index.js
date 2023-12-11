@@ -68,19 +68,15 @@ app.post('/registration', async (req, res, next) => {
 
     console.log(newCustomer);
 
-    // Resulting Error: MongooseError: Model.create() no longer accepts a callback
-    /*Customer.create(newCustomer, function(err, customer) {
-        if (err) {
-            console.log(err);
-            next(err);
-        } else {
-            res.render('index', {
-                title: 'Pets-R-Us Home'
-            })
-        }
-    })*/
-    //The following code works, but I'm unsure of how to log the results and reroute afterwards.
-    await Customer.create({ customerId: req.body.clientName, email: req.body.clientEmail });
+    // The following works, but Node gets hung up afterwards due to connection still being open.
+    try {
+        await Customer.create({ customerId: req.body.clientName, email: req.body.clientEmail });
+        res.render('index', {
+            title: 'Pets-R-Us Home'
+        })
+    } catch (err) {
+        err.stack;
+    }
 })
 
 app.listen(PORT, () => {
