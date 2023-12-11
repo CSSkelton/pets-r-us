@@ -200,7 +200,7 @@ img {
     display: inline-flex;
     max-height: 100px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--h1-background-color);
     position: fixed;
@@ -219,6 +219,12 @@ nav {
 
 nav li {
     display: inline;
+    padding: 10px;
+}
+
+#header-register-button {
+    background-color: #39FF14;
+    color: #303030;
     padding: 10px;
 }
 
