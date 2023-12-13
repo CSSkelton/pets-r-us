@@ -1,11 +1,13 @@
 const express = require('express');
 const logger = require('pino')();
 const path = require('path');
+const fs = require('fs');
 const Customer = require('./models/customer');
+const Appointment = require('./models/appointment');
 
 //DB Connection
 var mongoose = require('mongoose');
-const conn = "mongodb+srv://codysskelton:K87m9B8CjIHIoVe2@cluster0.ifz0to0.mongodb.net/web340DB?retryWrites=true&w=majority"
+const conn = "mongodb+srv://manager-01:7JNd9SbPS0b0RyBh@cluster0.ifz0to0.mongodb.net/web340DB?retryWrites=true&w=majority"
 
 mongoose.connect(conn).then(() => {
     console.log("Connection to the database was successful");
@@ -51,9 +53,65 @@ app.get('/training', (req, res) => {
     });
 })
 
+app.get('/booking', (req, res) => {
+    let jsonFile = fs.readFileSync('./public/data/services.json');
+    let services = JSON.parse(jsonFile);
+
+    console.log(services);
+
+    res.render('booking', {
+        title: 'Pets-R-Us Appointment Booking',
+        services: services
+    })
+})
+
+app.post('/booking', (req, res) => {
+    const customerId = req.body.customerId;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
+    const service = req.body.service;
+
+    console.log(`CustomerId: ${customerId}; First name: ${firstName}; Last name: ${lastName}; Email: ${email}; Service: ${service}`);
+
+    let scheduledAppointment = new Appointment({
+        customerId,
+        firstName,
+        lastName,
+        email,
+        service
+    });
+
+    Appointment.create(scheduledAppointment, function(err, appointment) {
+        if (err) {
+            console.log(err);
+            next(err);
+        } else {
+            console.log("Your appointment has been successfully scheduled");
+            console.log(appointment);
+            res.redirect('/');
+        }
+    })
+})
+
 app.get('/register', (req, res) => {
     res.render('register', {
         title: 'Pets-R-Us Client Registration'
+    })
+})
+
+app.get('/customers', function(req, res, next) {
+    Customer.find({}, function(err, customers) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        } else {
+            console.log(customers);
+            res.render('customer-list', {
+                title: 'Pets-R-Us: Customer List',
+                customers: customers
+            })
+        }
     })
 })
 
@@ -67,6 +125,16 @@ app.post('/registration', async (req, res, next) => {
     })
 
     console.log(newCustomer);
+
+    //Returns MongooseError: Model.create() no longer accepts a callback
+    /*Customer.create(newCustomer, function(err, cus) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        } else {
+            res.redirect('/index');
+        }
+    })*/
 
     // The following works, but Node gets hung up afterwards due to connection still being open.
     try {

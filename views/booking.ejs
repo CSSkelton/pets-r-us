@@ -1,0 +1,56 @@
+<!-- 
+    Title: booking.ejs
+    Author: Cody Skelton
+    Date: 12.13.2023
+    Description: Allows customers to book appointments.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="css/site.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        
+    </head>
+    <body class="dark-theme">
+        <%- include('partials/header') %>
+            <div class="card container">
+                <h1 class="card-title">Schedule an Appointment</h1>
+                <div class="card-content">
+                    <form class="form" action="/booking" method="post">
+                        <div class="form-field">
+                            <label for="customerId">Customer ID: </label>
+                            <input class="input" type="text" name="customerId">
+                        </div>
+                        <div class="form-field">
+                            <label for="firstName">First Name: </label>
+                            <input class="input" type="text" name="firstName">
+                        </div>
+                        <div class="form-field">
+                            <label for="lastName">Last Name: </label>
+                            <input class="input" type="text" name="lastName">
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email: </label>
+                            <input class="input" type="email" name="email">
+                        </div>
+                        <div class="form-field">
+                            <select name="service" id="service">
+                                <% services.forEach(function(service) { %>
+                                    <option value=<%= service.value %>>
+                                        <%= service.text %>
+                                    </option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <button type="submit" class="btn btn-primary" id="bookingButton">Book Appointment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <%- include('partials/footer') %>
+    </body>
+</html>

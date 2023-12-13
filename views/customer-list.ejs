@@ -1,0 +1,47 @@
+<!-- 
+    Title: customer-list.ejs
+    Author: Cody Skelton
+    Date: 12.13.2023
+    Description: Shows current list of clients in customers database
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="css/site.css">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        
+    </head>
+    <body class="dark-theme">
+        <%- include('partials/header') %>
+
+        <div class="container card">
+            <h1 class="card-title">Customer List</h1>
+
+            <div class="card-content">
+                <table>
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Customer Email</th>
+                    </tr>
+                    <tbody>
+                        <% customers.forEach(function(cus) { %>
+                        <tr>
+                            <td>
+                                <%= cus.customerId %>
+                            </td>
+                            <td>
+                                <%= cus.email %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+    </body>
+</html>

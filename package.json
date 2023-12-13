@@ -20,7 +20,7 @@
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "mongoose": "^8.0.3",
+    "mongoose": "^6.12.3",
     "pino": "^8.16.2"
   },
   "devDependencies": {

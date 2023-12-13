@@ -195,6 +195,31 @@ img {
     max-width: 50%;
 }
 
+/* Tables */
+th {
+    font-style: oblique;
+    font-size: large;
+    background-color: var(--btn-background-color);
+    color: var(--anchor-hover-background-color);
+}
+
+table {
+    border: solid medium var(--container-border-color);
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    padding: 8px;
+    text-align: left;
+    border-left: 1px solid var(--container-border-color);
+    border-right: 1px solid var(--container-border-color);
+}
+
+tr:nth-child(even) {
+    background-color: black;
+}
+
 /* Header Elements */
 .header {
     display: inline-flex;
