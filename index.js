@@ -126,25 +126,14 @@ app.post('/registration', async (req, res, next) => {
 
     console.log(newCustomer);
 
-    //Returns MongooseError: Model.create() no longer accepts a callback
-    /*Customer.create(newCustomer, function(err, cus) {
+    Customer.create(newCustomer, function(err, cus) {
         if (err) {
             console.error(err);
             res.end(err);
         } else {
-            res.redirect('/index');
+            res.redirect('/');
         }
-    })*/
-
-    // The following works, but Node gets hung up afterwards due to connection still being open.
-    try {
-        await Customer.create({ customerId: req.body.clientName, email: req.body.clientEmail });
-        res.render('index', {
-            title: 'Pets-R-Us Home'
-        })
-    } catch (err) {
-        err.stack;
-    }
+    })
 })
 
 app.get('/my-appointments', (req, res) => {
